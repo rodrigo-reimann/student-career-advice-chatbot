@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+      <!-- Pattern includes different types of greetings based on a set -->
+    <pattern><set>greetings</set></pattern>
+    <template>Hello! Are you looking for Computer Science career advice?
+        <button>
+            <text>Yes</text>
+            <postback>adviceyes</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>adviceno</postback>
+        </button>
+    </template>
+  </category>
+
+  <category>
+      <pattern>adviceyes</pattern>
+      <template>Awesome! What is your name? Reply with "My name is..."</template>
+  </category>
+  
+  <category>
+      <pattern>adviceno</pattern>
+      <template>Too bad! I was made to help with Computer Science career advice.</template>
+  </category> 
+  
+  <category>
+      <pattern>MY NAME IS *</pattern>
+      <that>REPLY WITH MY NAME IS</that>
+      <template>
+          Hello <set name="username"><star /></set>! Let me start by asking you some basic questions. Are you a Computer Science major?
+          <button>
+              <text>Yes</text>
+              <postback>CSyes</postback>
+          </button>
+          <button>
+              <text>No</text>
+              <postback>CSno</postback>
+          </button>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>CSyes</pattern>
+      <template>
+          Great! What field are you most interested in?
+          <button>
+              <text>Web Development</text>
+              <postback>web</postback>
+          </button>
+          <button>
+              <text>Software Development</text>
+              <postback>software</postback>
+          </button>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>CSno</pattern>
+      <template>I can only provide career advice to Computer Science majors.</template>
+  </category> 
+  
+  <category>
+      <pattern>software</pattern>
+      <template>
+          Which one do you like best, design, programming or data science?
+          <button>
+              <text>Design</text>
+              <postback>Sdesign</postback>
+          </button>
+          <button>
+              <text>Programming</text>
+              <postback>Sprogramming</postback>
+          </button>
+          <button>
+              <text>Data Science</text>
+              <postback>data</postback>
+          </button>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>web</pattern>
+      <template>
+          Which one do you like best, design or programming?
+          <button>
+              <text>Design</text>
+              <postback>Wdesign</postback>
+          </button>
+          <button>
+              <text>Programming</text>
+              <postback>Wprogramming</postback>
+          </button>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>Sdesign</pattern>
+      <template>
+          The best career path fo you is as a UI/UX Designer!
+          <link>
+              <text>Click here to learn more</text>
+              <url>https://flatironschool.com/blog/what-is-ux-ui-design/</url>
+          </link>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>Sprogramming</pattern>
+      <template>
+          The best career path fo you is as a Software Developer!
+          <link>
+              <text>Click here to learn more</text>
+              <url>https://www.coursera.org/articles/software-developer</url>
+          </link>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>data</pattern>
+      <template>
+          The best career path fo you is as a Machine Learning/Artificial Intelligence Engineer!
+          <link>
+              <text>Click here to learn more</text>
+              <url>https://www.upwork.com/resources/ai-engineer-vs-ml-engineer</url>
+          </link>
+      </template>
+  </category>  
+  
+  <category>
+      <pattern>Wprogramming</pattern>
+      <template>
+          The best career path fo you is as a Back-End Web Developer!
+          <link>
+              <text>Click here to learn more</text>
+              <url>https://www.coursera.org/articles/back-end-developer</url>
+          </link>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>Wdesign</pattern>
+      <template>
+          The best career path fo you is as a Front-End Web Developer!
+          <link>
+              <text>Click here to learn more</text>
+              <url>https://www.coursera.org/articles/front-end-developer</url>
+          </link>
+      </template>
+  </category>  
+  
+  <!-- Pattern includes different types of byes based on a set -->
+  <category>
+      <pattern><set>byes</set></pattern>
+      <template>You may now close this chat</template>
+  </category>
+  
+
+</aiml>
